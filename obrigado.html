@@ -1,0 +1,132 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Thank You - Order Confirmed</title>
+
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)
+  }(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+
+  fbq('init', '1015034518184244');
+  fbq('track', 'PageView');
+
+  // Evento de compra: só uma vez por sessão (recarregar a página não conta outra venda)
+  (function(){
+    var key = 'purchase_sent_comfee_5l';
+    var sent = false;
+    try { sent = sessionStorage.getItem(key) === '1'; } catch (e) {}
+    if (sent) return;
+    fbq('track', 'Purchase', {
+      value: 499.00,
+      currency: 'ZAR',
+      content_name: 'Comfee Portable Dishwasher 5L',
+      content_type: 'product',
+      num_items: 1
+    });
+    try { sessionStorage.setItem(key, '1'); } catch (e) {}
+  })();
+</script>
+<noscript><img height="1" width="1" style="display:none" alt=""
+  src="https://www.facebook.com/tr?id=1015034518184244&ev=Purchase&cd[value]=499.00&cd[currency]=ZAR&noscript=1"></noscript>
+
+<script src="js/latest.js" data-utmify-prevent-xcod-sck="" data-utmify-prevent-subids="" async="" defer=""></script>
+
+<script>
+  window.pixelId = "67918adf0b80f52dd2589822";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script><script async="" defer="" src="js/pixel.js"></script>
+
+<style>
+*{ box-sizing: border-box; margin: 0; padding: 0; }
+body{
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: #fff;
+  color: #111;
+}
+.topbar{
+  background: #fff;
+  padding: 14px 0;
+  text-align: center;
+  border-bottom: 3px solid #0b79d0;
+}
+.topbar-title{ font-size: 17px; font-weight: 800; line-height: 26px; color: #0b79d0; }
+.content{
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 32px 16px 40px;
+  text-align: center;
+}
+.check{
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  background: #2fce6b;
+  color: #fff;
+  font-size: 40px;
+  line-height: 72px;
+  margin: 0 auto 18px;
+}
+h1{ font-size: 24px; font-weight: 800; margin-bottom: 8px; }
+.lead{ color: #555; font-size: 15px; line-height: 1.5; margin-bottom: 24px; }
+.item{
+  display: flex; align-items: center; gap: 12px;
+  text-align: left;
+  border: 1px solid #e5e5e5; border-radius: 10px;
+  padding: 12px; margin-bottom: 20px;
+}
+.item img{ width: 72px; height: 72px; object-fit: contain; flex-shrink: 0; }
+.item-name{ font-size: 14px; font-weight: 600; }
+.item-price{ font-size: 18px; font-weight: 800; margin-top: 4px; }
+.info{
+  background: #f4f8fc; border-radius: 10px;
+  padding: 14px; font-size: 14px; line-height: 1.5; color: #333;
+  margin-bottom: 24px; text-align: left;
+}
+.info strong{ color: #111; }
+.home-btn{
+  display: block; width: 100%; height: 50px; line-height: 50px;
+  border-radius: 999px; background: #0b79d0; color: #fff;
+  font-size: 16px; font-weight: 700; text-decoration: none;
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="topbar-title">Order Confirmed</span>
+</div>
+
+<div class="content">
+  <div class="check" aria-hidden="true">&#10003;</div>
+  <h1>Thank you for your order!</h1>
+  <p class="lead">Your payment was approved and your order has been confirmed.</p>
+
+  <div class="item">
+    <img src="images/P1.png" alt="Comfee Portable Dishwasher 5L">
+    <div>
+      <div class="item-name">Comfee Portable Dishwasher 5L</div>
+      <div class="item-price">R 499</div>
+    </div>
+  </div>
+
+  <div class="info">
+    <strong>What happens next?</strong><br>
+    You will receive a confirmation with your order details. Your order will be prepared and delivered to the address you provided.
+  </div>
+
+  <a class="home-btn" href="index.html">Back to the store</a>
+</div>
+
+</body>
+</html>
