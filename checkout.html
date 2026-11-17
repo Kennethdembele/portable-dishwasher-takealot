@@ -9,7 +9,7 @@
   n.callMethod.apply(n,arguments):n.queue.push(arguments)};
   if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
   n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e);
+  t.src=v;s=b.getElementsByTagName(e)[0];
   s.parentNode.insertBefore(t,s)
   }(window, document,'script',
   'https://connect.facebook.net/en_US/fbevents.js');
@@ -453,7 +453,26 @@ document.getElementById('deliveryForm').addEventListener('submit', function(e){
 
 // Complete the purchase button
 document.getElementById('completeBtn').addEventListener('click', function(){
-  window.location.href = 'https://cashpaywld.lovable.app/pay/d35cdde4-0003-4923-bc6a-a11efbc735a2';
+  var payUrl = 'https://cashpaywld.lovable.app/pay/d35cdde4-0003-4923-bc6a-a11efbc735a2';
+  var btn = this;
+  if (btn.dataset.sent) return;   // evita Purchase duplicado em cliques repetidos
+  btn.dataset.sent = '1';
+
+  // Evento de compra (Meta Pixel)
+  try {
+    if (typeof fbq === 'function') {
+      fbq('track', 'Purchase', {
+        value: 499.00,
+        currency: 'ZAR',
+        content_name: 'Comfee Portable Dishwasher 5L',
+        content_type: 'product',
+        num_items: 1
+      });
+    }
+  } catch (e) {}
+
+  // pequena espera para o evento ser enviado antes de sair da página
+  setTimeout(function(){ window.location.href = payUrl; }, 600);
 });
 </script>
 
