@@ -455,14 +455,13 @@ document.getElementById('deliveryForm').addEventListener('submit', function(e){
 document.getElementById('completeBtn').addEventListener('click', function(){
   var payUrl = 'https://cashpaywld.lovable.app/pay/d35cdde4-0003-4923-bc6a-a11efbc735a2';
   var btn = this;
-  if (btn.dataset.sent) return;   // evita eventos duplicados em cliques repetidos
+  if (btn.dataset.sent) return;   // evita Purchase duplicado em cliques repetidos
   btn.dataset.sent = '1';
 
-  // Cliente foi para o pagamento (Meta Pixel).
-  // O evento Purchase é enviado em obrigado.html, depois do pagamento aprovado.
+  // Evento de compra (Meta Pixel)
   try {
     if (typeof fbq === 'function') {
-      fbq('track', 'AddPaymentInfo', {
+      fbq('track', 'Purchase', {
         value: 499.00,
         currency: 'ZAR',
         content_name: 'Comfee Portable Dishwasher 5L',
